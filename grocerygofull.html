@@ -7,11 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Base Fonts and Special Effects */
+    
     body {
       font-family: 'Lato', sans-serif;
-      color: #f4f4f4; /* Light text for dark mode */
-      background-color: #121212; /* Dark background */
+      color: #f4f4f4; 
+      background-color: #121212;
       margin: 0;
       padding: 0;
       transition: background-color 0.3s, color 0.3s;
@@ -19,9 +19,9 @@
     h1, h2, h3, h4 {
       font-family: 'Bebas Neue', cursive;
     }
-    /* Header */
+   
     header {
-      background-color: #1b1b1b; /* Darker header */
+      background-color: #1b1b1b;
       color: white;
       padding: 15px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.5);
@@ -44,32 +44,32 @@
       padding: 0;
     }
     nav ul li a, .settings-btn {
-      color: #f4f4f4; /* Light text for links */
+      color: #f4f4f4; 
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s, background-color 0.3s;
       padding: 10px 20px;
       border-radius: 5px;
-      font-size: 1em; /* Same font size */
-      font-family: 'Lato', sans-serif; /* Same font family */
+      font-size: 1em; 
+      font-family: 'Lato', sans-serif; 
     }
     nav ul li a:hover, .settings-btn:hover {
-      color: #d4edda; /* Light green on hover */
-      background-color: #218838; /* Darker green background on hover */
+      color: #d4edda;
+      background-color: #218838;
     }
     
     button, .cart-shortcut, .login-btn, .logout-btn, .add-to-cart, .cart-popup button {
       padding: 10px 20px;
       font-size: 1em;
       border-radius: 5px;
-      background-color: #28a745; /* Green button */
+      background-color: #28a745;
       color: white;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
     button:hover, .cart-shortcut:hover, .login-btn:hover, .logout-btn:hover, .add-to-cart:hover, .cart-popup button:hover {
-      background-color: #218838; /* Darker green on hover */
+      background-color: #218838; 
       transform: scale(1.05);
     }
     .cart-shortcut { margin-right: 0; }
@@ -128,7 +128,7 @@
       to { opacity: 1; transform: translateX(0); }
     }
     .product {
-      background-color: #1e1e1e; /* Dark background for products */
+      background-color: #1e1e1e; 
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -149,33 +149,33 @@
     .product-content h4 {
       font-size: 1.5em;
       margin-bottom: 10px;
-      color: #f4f4f4; /* Light text for product names */
+      color: #f4f4f4; 
     }
     .product-content p {
       font-size: 1.2em;
       margin-bottom: 15px;
-      color: #f4f4f4; /* Light text for product prices */
+      color: #f4f4f4; 
     }
     .stock-status {
       margin-bottom: 15px;
       font-weight: bold;
-      color: #888; /* Gray color for stock status */
+      color: #888; 
     }
     .account-info {
-      background-color: #1e1e1e; /* Dark background for account info */
+      background-color: #1e1e1e; 
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       margin-bottom: 40px;
       animation: fadeInUp 0.5s ease-out;
     }
     .account-info .container { padding: 20px; }
-    .account-info h3 { margin-bottom: 20px; color: #f4f4f4; } /* Light text for account info title */
+    .account-info h3 { margin-bottom: 20px; color: #f4f4f4; } 
     .account-info .card {
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 20px;
-      background-color: #2a2a2a; /* Dark background for card */
-      color: #f4f4f4; /* Light text for card */
+      background-color: #2a2a2a; 
+      color: #f4f4f4; 
     }
     .account-info .card-body { padding: 20px; }
     .account-info .card-header {
@@ -194,7 +194,7 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #1e1e1e; /* Dark background for cart popup */
+      background-color: #1e1e1e; 
       border: 2px solid #ddd;
       padding: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -211,21 +211,21 @@
     .cart-popup h4 {
       margin-bottom: 10px;
       font-size: 1.5em;
-      color: #f4f4f4; /* Light text for cart title */
+      color: #f4f4f4; 
     }
     .cart-popup ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .cart-popup ul li { margin-bottom: 10px; color: #f4f4f4; } /* Light text for cart items */
+    .cart-popup ul li { margin-bottom: 10px; color: #f4f4f4; } 
     .cart-popup .total {
       font-weight: bold;
       margin-top: 15px;
       text-align: right;
-      color: #f4f4f4; /* Light text for total */
+      color: #f4f4f4;
     }
-    /* Sorting drop-down extra effect */
+    
     #sort-select:hover {
       animation: pulse 1s infinite;
     }
@@ -234,13 +234,13 @@
       50% { transform: scale(1.02); }
       100% { transform: scale(1); }
     }
-    /* Arrange products in a grid with 2 items per row */
+   
     #product-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
-    /* Filter Bar: Place search input and sort drop-down in one row */
+    
     .filter-bar {
       display: flex;
       gap: 10px;
@@ -258,9 +258,9 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-    /* Reduced Login Box (placed above Available Products title) */
+   
     #login-box {
-      background-color: #1e1e1e; /* Dark background for login box */
+      background-color: #1e1e1e; 
       border: 1px solid #ddd;
       border-radius: 5px;
       padding: 15px;
@@ -271,7 +271,7 @@
     #login-box h2 {
       font-size: 1.8em;
       margin-bottom: 15px;
-      color: #f4f4f4; /* Light text for login title */
+      color: #f4f4f4; 
     }
     #login-box input {
       width: 100%;
@@ -280,29 +280,29 @@
       border: 1px solid #ccc;
       border-radius: 3px;
       font-size: 0.9em;
-      background-color: #333; /* Dark background for input */
-      color: #f4f4f4; /* Light text for input */
+      background-color: #333;
+      color: #f4f4f4;
     }
     #login-box button {
       width: 100%;
       padding: 8px;
       font-size: 0.9em;
     }
-    /* Card Information Section */
+  
     #card-info {
       display: none;
       margin-top: 20px;
       padding: 20px;
-      background-color: #1e1e1e; /* Dark background for card info */
+      background-color: #1e1e1e; 
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 300px; /* Same width as login box */
-      margin: 0 auto; /* Center the card info box */
+      width: 300px; 
+      margin: 0 auto; 
     }
     #card-info h3 {
       text-align: center;
       margin-bottom: 20px;
-      color: #f4f4f4; /* Light text for card info title */
+      color: #f4f4f4; 
     }
     #card-info input {
       width: 100%;
@@ -310,16 +310,16 @@
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      background-color: #333; /* Dark background for input */
-      color: #f4f4f4; /* Light text for input */
+      background-color: #333; 
+      color: #f4f4f4;
     }
-    /* Settings Popup */
+  
     .settings-popup {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #1e1e1e; /* Dark background for settings */
+      background-color: #1e1e1e; 
       border: 2px solid #ddd;
       padding: 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -332,7 +332,7 @@
     .settings-popup h4 {
       margin-bottom: 10px;
       font-size: 1.5em;
-      color: #f4f4f4; /* Light text for settings title */
+      color: #f4f4f4;
     }
     .settings-popup ul {
       list-style: none;
@@ -341,7 +341,7 @@
     }
     .settings-popup li {
       margin-bottom: 10px;
-      color: #f4f4f4; /* Light text for settings options */
+      color: #f4f4f4;
     }
     .settings-popup button {
       width: 100%;
@@ -349,17 +349,17 @@
       font-size: 0.9em;
       margin-top: 10px;
     }
-    /* Login History Section */
+   
     #login-history {
       margin-top: 40px;
       padding: 20px;
-      background-color: #1e1e1e; /* Dark background for login history */
+      background-color: #1e1e1e;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
     #login-history h3 {
       text-align: center;
-      color: #f4f4f4; /* Light text for login history title */
+      color: #f4f4f4; 
     }
     #login-history ul {
       list-style: none;
@@ -367,7 +367,7 @@
       margin: 0;
     }
     #login-history ul li {
-      color: #f4f4f4; /* Light text for login history items */
+      color: #f4f4f4; 
       margin-bottom: 10px;
     }
   </style>
