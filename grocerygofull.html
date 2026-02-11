@@ -380,7 +380,7 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#account-info">Profile</a></li>
-        <li><a href="#login-history">Login History</a></li> <!-- New link for Login History -->
+        <li><a href="#login-history">Login History</a></li> 
       </ul>
       <div id="right-menu" style="display: flex; align-items: center; gap: 10px;">
         <button class="cart-shortcut" onclick="toggleCartPopup()">Cart (<span id="cart-count">0</span>)</button>
@@ -490,7 +490,6 @@
     </div>
   </section>
 
-  <!-- New Login History Section -->
   <section id="login-history">
     <h3>Login History</h3>
     <ul id="login-history-list"></ul>
@@ -501,7 +500,6 @@
   </footer>
   
   <script>
-    // Predefined random details arrays and helper function
     const randomData = {
       age: [22, 25, 30, 28, 35],
       sex: ["Male", "Female", "Non-binary"],
@@ -530,8 +528,7 @@
     let isLoggedIn = false;
     let currentUser  = "";
     let recentPurchases = [];
-    let loginHistory = []; // Array to store login history
-
+    let loginHistory = [];
     const products = [
       { name: 'Apple', price: 100, image: 'https://source.unsplash.com/200x150/?apple', supermarkets: ['SuperMart', 'FreshFoods', 'GroceryPlus', 'MarketHub', 'ValueStore'] },
       { name: 'Banana', price: 50, image: 'https://source.unsplash.com/200x150/?banana', supermarkets: ['SuperMart', 'GroceryPlus', 'MarketHub', 'ValueStore'] },
@@ -640,8 +637,8 @@
     }
     
     function showCardInfo() {
-      document.getElementById('cart-popup').style.display = 'none'; // Hide cart popup
-      document.getElementById('card-info').style.display = 'block'; // Show card info section
+      document.getElementById('cart-popup').style.display = 'none'; 
+      document.getElementById('card-info').style.display = 'block'; 
     }
 
     function proceedToPurchase() {
@@ -649,16 +646,11 @@
       const cardNumber = document.getElementById('card-number').value;
       const cardCVC = document.getElementById('card-cvc').value;
       const cardExpiry = document.getElementById('card-expiry').value;
-
-      // Here you can add validation for card details if needed
-
-      // Add purchased items to recent purchases
       recentPurchases = recentPurchases.concat(cart);
       updateRecentPurchasesUI();
 
-      // Clear the cart and hide the card info section
       clearCart();
-      document.getElementById('card-info').style.display = 'none'; // Hide card info section
+      document.getElementById('card-info').style.display = 'none'; 
 
       alert(`Purchase completed successfully!\nName: ${cardName}\nCard Number: ${cardNumber}\nCVC: ${cardCVC}\nExpiry Date: ${cardExpiry}`);
     }
@@ -694,23 +686,16 @@
       const legalSetting = document.getElementById('legal-setting').checked;
 
       alert(`Settings saved:\nNotification: ${notificationSetting}\nPermission: ${permissionSetting}\nPurchase Option: ${purchaseSetting}\nLegal & About: ${legalSetting}`);
-      toggleSettingsPopup(); // Close the settings popup after saving
+      toggleSettingsPopup(); 
     }
 
-    // Inline Login Box Functionality
     function loginUser (username, password) {
       if (username && password) {
         isLoggedIn = true;
         currentUser  = username;
-
-        // Get current time
         const loginTime = new Date().toLocaleString();
-
-        // Store login history
         loginHistory.push({ username, time: loginTime });
         updateLoginHistoryUI();
-
-        // Update profile details: if username exists in userDatabase use that; otherwise, use random values.
         const userDatabase = {
           "Priyanka": {
             age: 25,
@@ -750,8 +735,6 @@
           expiryDate: getRandomElement(randomData.expiryDate),
           billingAddress: getRandomElement(randomData.billingAddress)
         };
-
-        // Update profile section with the details
         document.getElementById('profile-name').textContent = username;
         document.getElementById('account-name').textContent = username;
         document.getElementById('account-age').textContent = details.age;
@@ -767,7 +750,7 @@
         document.getElementById('account-info').style.display = 'block';
         document.getElementById('login-box').style.display = 'none';
         document.getElementById('logout-btn').style.display = 'inline-block';
-        document.getElementById('card-info').style.display = 'block'; // Show card info section after login
+        document.getElementById('card-info').style.display = 'block'; 
         alert('Login successful!');
       } else {
         alert('Please enter both username and password.');
@@ -788,13 +771,13 @@
       isLoggedIn = false;
       currentUser  = "";
       recentPurchases = [];
-      cart.length = 0; // Clear the cart
-      updateCartUI(); // Update cart UI
-      document.getElementById('account-info').style.display = 'none'; // Hide account info
-      document.getElementById('login-box').style.display = 'block'; // Show login box
-      document.getElementById('logout-btn').style.display = 'none'; // Hide logout button
-      document.getElementById('cart-popup').style.display = 'none'; // Hide cart popup
-      document.getElementById('card-info').style.display = 'none'; // Hide card info section
+      cart.length = 0; 
+      updateCartUI(); 
+      document.getElementById('account-info').style.display = 'none'; 
+      document.getElementById('login-box').style.display = 'block'; 
+      document.getElementById('logout-btn').style.display = 'none'; 
+      document.getElementById('cart-popup').style.display = 'none'; 
+      document.getElementById('card-info').style.display = 'none'; 
       alert('Logout successful!');
     }
     
@@ -805,7 +788,6 @@
       loginUser (username, password);
     });
     
-    // Initialize page and add event listeners for search and sort
     document.addEventListener('DOMContentLoaded', () => {
       renderProducts();
       document.getElementById('search-input').addEventListener('input', function() {
@@ -814,7 +796,6 @@
       document.getElementById('sort-select').addEventListener('change', function() {
         renderProducts(document.getElementById('search-input').value, this.value);
       });
-      // Show login box if not logged in
       if (!isLoggedIn) {
         document.getElementById('login-box').style.display = 'block';
       }
